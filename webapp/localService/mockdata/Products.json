@@ -6,7 +6,7 @@
     "UnitsOnOrder": 10,
     "UnitPrice": 8,
     "SupplierID": 1,
-    "Discontinued": false,
+    "Discontinued": true,
     "Supplier": {
       "__deferred": {
         "uri": "/destinations/northwind/V2/Northwind/Northwind.svc/Products(1)/Supplier"
