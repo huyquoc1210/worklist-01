@@ -7,7 +7,7 @@
 	<semantic:SemanticPage
 		id="page"
 		headerPinnable="false"
-		toggleHeaderOnTitleClick="false">
+		toggleHeaderOnTitleClick="false" showFooter="true">
 
 		<semantic:titleHeading>
 			<Title text="{i18n>worklistTitle}" />
@@ -62,7 +62,9 @@
 						busyIndicatorDelay="{worklistView>/tableBusyDelay}"
 						growing="true"
 						growingScrollToLoad="true"
-						updateFinished=".onUpdateFinished">
+						updateFinished=".onUpdateFinished"
+						mode="MultiSelect"
+					>
 
 						<headerToolbar>
 							<Toolbar>
@@ -147,6 +149,12 @@
 		<semantic:sendEmailAction>
 			<semantic:SendEmailAction id="shareEmail" press=".onShareEmailPress" />
 		</semantic:sendEmailAction>
+		<semantic:positiveAction>
+			<semantic:PositiveAction text="{i18n>TableProductsReorder}" press=".onUpdateStockObjects" />
+		</semantic:positiveAction>
+		<semantic:negativeAction>
+			<semantic:NegativeAction text="{i18n>TablePorductsUnlist}" press=".onUnlistObjects" />
+		</semantic:negativeAction>
 
 	</semantic:SemanticPage>
 
