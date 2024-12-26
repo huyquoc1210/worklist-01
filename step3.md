@@ -2,7 +2,7 @@
 
 Chúng ta sẽ chỉnh bảng worklist để thêm các cột bổ sung cho kịc bản quản lý kho sản phẩm.Chúng hiển thị `product price`, `number of units`, `supplier`.
 
-Chúng ta display company name của supplier, trong mỗi cột riêng bịtee trong bảng cho mỗi products. Vì chúng ta mở rộng tập hợp items của bảng với tham số `expand` cho thực thể `Supplier`. Với điều này, dữ liệu của supplier sẽ được bao gồm ngay trong yêu cầu dịch vụ cho các sản phẩm.
+Chúng ta display company name của supplier, trong mỗi cột riêng biệt trong bảng cho mỗi products. Vì chúng ta mở rộng tập hợp items của bảng với tham số `expand` cho thực thể `Supplier`. Với điều này, dữ liệu của supplier sẽ được bao gồm ngay trong yêu cầu dịch vụ cho các sản phẩm.
 
 Mở rộng supplier(nhà cung cấp). Hơn nữa, việc cho phép chúng ta liên kết trực tiếp `{Supplier/CompanyName}` sau này
 

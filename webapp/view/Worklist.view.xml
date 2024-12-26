@@ -2,7 +2,8 @@
 	controllerName="mycompany.myapp.MyWorklistApp.controller.Worklist"
 	xmlns="sap.m"
 	xmlns:mvc="sap.ui.core.mvc"
-	xmlns:semantic="sap.f.semantic">
+	xmlns:semantic="sap.f.semantic"
+>
 
 	<semantic:SemanticPage
 		id="page"
@@ -143,7 +144,6 @@
 					</Table>
 				</content>
 			</IconTabBar>
-
 		</semantic:headerContent>
 
 		<semantic:sendEmailAction>

@@ -3,7 +3,8 @@
 	xmlns="sap.m"
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns:semantic="sap.f.semantic"
-	xmlns:form="sap.ui.layout.form">
+	xmlns:form="sap.ui.layout.form"
+	xmlns:l="sap.ui.layout">
 
 	<semantic:SemanticPage
 		id="page"
@@ -60,34 +61,60 @@
 			</FlexBox>
 		</semantic:headerContent>
 		<semantic:content>
-			<Panel
-				class="sapUiNoContentPadding"
-				headerText="{i18n>ObjectSupplierTabTitle}">
-				<content>
-					<form:SimpleForm
-						minWidth="1024"
-						maxContainerCols="2"
-						editable="false"
-						layout="ResponsiveGridLayout"
-						labelSpanL="3"
-						labelSpanM="3"
-						emptySpanL="4"
-						emptySpanM="4"
-						columnsL="1"
-						columnsM="1">
-						<form:content>
-							<Label text="{i18n>ObjectSupplierName}" />
-							<Text text="{Supplier/CompanyName}" />
-							<Label text="{i18n>ObjectSupplierAddress}" />
-							<Text text="{Supplier/Address}" />
-							<Label text="{i18n>ObjectSupplierZipcode} / {i18n>ObjectSupplierCity}" />
-							<Text text="{Supplier/PostalCode} / {Supplier/City}" />
-							<Label text="{i18n>ObjectSupplierCountry}" />
-							<Text text="{Supplier/Country}" />
-						</form:content>
-					</form:SimpleForm>
-				</content>
-			</Panel>
+			<l:VerticalLayout width="100%">
+				<Panel
+					backgroundDesign="Transparent"
+					headerText="{i18n>ObjectSupplierTabTitle}">
+					<content>
+						<form:SimpleForm
+							minWidth="1024"
+							maxContainerCols="2"
+							editable="false"
+							layout="ResponsiveGridLayout"
+							labelSpanL="3"
+							labelSpanM="3"
+							emptySpanL="4"
+							emptySpanM="4"
+							columnsL="1"
+							columnsM="1">
+							<form:content>
+								<Label text="{i18n>ObjectSupplierName}" />
+								<Text text="{Supplier/CompanyName}" />
+								<Label text="{i18n>ObjectSupplierAddress}" />
+								<Text text="{Supplier/Address}" />
+								<Label text="{i18n>ObjectSupplierZipcode} / {i18n>ObjectSupplierCity}" />
+								<Text text="{Supplier/PostalCode} / {Supplier/City}" />
+								<Label text="{i18n>ObjectSupplierCountry}" />
+								<Text text="{Supplier/Country}" />
+							</form:content>
+						</form:SimpleForm>
+					</content>
+				</Panel>
+				<Panel
+					backgroundDesign="Transparent"
+					headerText="{i18n>ObjectCommentsTabTitle}">
+					<content>
+						<FeedInput post=".onPost" />
+						<List
+							id="idCommentsList"
+							noDataText="{i18n>ObjectCommentNoData}"
+							showSeparators="Inner"
+							items="{
+                                path: 'productFeedback>/productComments',
+                                sorter: {
+                                    path: 'date',
+                                    descending: true
+                                }
+                            }">
+							<FeedListItem
+								info="{productFeedback>type}"
+								text="{productFeedback>comment}"
+								timestamp="{productFeedback>date}" />
+						</List>
+					</content>
+				</Panel>
+			</l:VerticalLayout>
+
 
 		</semantic:content>
 		<semantic:sendEmailAction>
